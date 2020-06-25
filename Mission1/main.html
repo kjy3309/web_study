@@ -1,0 +1,77 @@
+<html>
+    <head>
+        <link rel="icon" href="./icon.png">
+        <meta charset="utf-8">
+        <title>메인페이지</title>
+        <style>
+            
+            div.first{
+                /* 
+                 ./ 현재 폴더
+                 ../ 한단계 위 폴더
+                 .../ 두단계....
+                 */
+                background-image: url(./no-repeat.png);
+                background-repeat: no-repeat;
+                background-position: right bottom;;
+                background-size: 200px;
+                height: 500px;
+            }
+
+            div.bg{
+                position: absolute;
+                width: 99%; /* 100% 주면 스크롤 생겨서 99 줌 */
+                height: 99%;
+                background-color: black;
+                top: 0px;
+                left: 0px;
+                z-index: 2;
+                opacity: 0.8;
+            }
+            h2{
+                text-align: center;
+            }
+            div.notice{
+                position: absolute;
+                background-color: white;
+                height: 300px;
+                width: 400px;
+                z-index: 10;
+                left: 35%;
+                top: 15%;
+            }
+
+        </style>
+    </head>
+    <body>
+        <iframe src="./navi.html" frameborder="0" width="100%" height="150px" scrolling = "no"></iframe>
+        <h1>메인 페이지</h1>
+        <hr/>
+        <div class="first">
+            <p> 
+                <small>NHM엔터테인먼트</small>가 <b>카카오</b>를 상대로 특허 침해 소송을 벌인 것과 관련해,<br/>
+                카카오가 제기한 <mark>특허 무효</mark> 심판 <i>3건 중 2건</i> 에서 카카오가 승소했다.
+            </p>
+
+            <p>
+                카카오는 14일 <del>NHM엔터테인먼트</del>의 특허 자회사 <ins>케이이노베이션</ins>이 보유 특허 침해로 제기한<br/>
+                특허소송과 관련해 자사가 진행한 <sup>특허 무효심판</sup>에서 승소했다고 밝혔다.
+            </p>
+        </div>
+
+        <div class="notice">
+            <h2>공지 사항</h2>
+            <p>다음과 같이 공지사항을 알려 드립니다.</p>
+            <p>이런 저런 내용들...</p>
+            <p>이런 저런 내용들...</p>
+            <p>이런 저런 내용들...</p>
+        </div>
+
+        <div class="bg"></div>
+        
+        
+
+        <hr/>
+        <iframe src="./footer.html" frameborder="0" width="100%" height="100px" scolling = "no"></iframe>
+    </body>
+</html>

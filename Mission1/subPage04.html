@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <link rel="icon" href="../icon.png">
+        <meta charset="utf-8">
+        <title>스프라이트</title>
+        <style>
+            .bird1{
+                width: 110px;
+                height: 110px;
+                /* background image 는 안됨 */
+                background: url(../spriteImg.png) 0 0;
+            }
+            .bird2{
+                width: 110px;
+                height: 110px;
+                /* background image 는 안됨 */
+                background: url(../spriteImg.png) 0px -110px;
+            }
+            .bird1:hover{
+                width: 110px;
+                height: 110px;
+                background: url(../spriteImg.png) 0px -110px;
+            }
+        </style>
+    </head>
+    <body>
+        <iframe src="./navi.html" frameborder="0" width="100%" height="50px" scrolling = "no"></iframe>
+        <h1>스프라이트</h1>
+        <hr>
+        <img class="bird1" src="../img_trans.png" alt="">
+        <!-- img 태그는 img가 없으면 테두리를 그린다. -->
+        <!-- 그래서 배경 이미지를 가리지 않는 투명 이미지를 반대로 넣어준다. -->
+        <img class="bird2" src="../img_trans.png" alt="">
+        <!-- 또는 img 태그 대신 다른 태그를 이용한다. -->
+        <div class="bird1"></div>
+
+        <hr>
+        <iframe src="./footer.html" frameborder="0" width="100%" height="100px" scolling = "no"></iframe>
+    </body>
+</html>

@@ -1,0 +1,115 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>regist</title>
+        <style>
+          table,th,td{
+              border: 1px solid black;
+              border-collapse: collapse;
+          } 
+          input[type='text'],input[type='password']{
+               width: 100%;
+          }
+
+          th,td{
+               padding: 10px;
+          }
+       </style>
+    </head>
+    <body>
+       <h1>회원가입 페이지</h1>
+       <hr/>
+     <form action="" method="POST">
+       <table>
+           <tr>
+                <th>아이디</th>
+                <td><input type="text" name="userID"></td>
+           </tr>
+           <tr>
+                <th>비밀번호</th>
+                <td><input type="password" name="password"></td>
+           </tr>
+           <tr>
+                <th>비밀번호 확인</th>
+                <td><input type="text" name="userPassConfirm"></td>
+           </tr>
+           <tr><!-- html 에서는 공백이 1자만 허용. &nbsp; 공백문자-->
+                <th>이&nbsp;&nbsp;&nbsp;&nbsp;름</th>
+                <td><input type="text" name="name"></td>
+           </tr>
+           <tr>
+                <th>이메일</th>
+                <td><input type="text" name="email"></td>
+           </tr>
+           <tr>
+                <th>생년월일</th>
+                <td>
+                     <select name="year">
+                          <option value="1991">1991</option>
+                          <option value="1992">1992</option>
+                          <option value="1993">1993</option>
+                          <option value="year">1994</option>
+                          <option value="year">1995</option>
+                          <option value="year">1996</option>
+                          <option value="year">1997</option>
+                          <option value="year">1998</option>
+                          <option value="year">1999</option>
+                          <option value="year" selected>2000</option>
+                     </select>
+                     <select name="month">
+                         <option value="mon">01</option>
+                         <option value="mon">02</option>
+                         <option value="mon">03</option>
+                         <option value="mon">04</option>
+                         <option value="mon">05</option>
+                         <option value="mon">06</option>
+                         <option value="mon">07</option>
+                         <option value="mon">08</option>
+                         <option value="mon">09</option>
+                         <option value="mon">10</option>
+                         <option value="mon">11</option>
+                         <option value="mon">12</option>
+                    </select>
+                    <select name="day">
+                         <option value="day">01</option>
+                         <option value="day">02</option>
+                         <option value="day">03</option>
+                         <option value="day">04</option>
+                         <option value="day">05</option>
+                         <option value="day">06</option>
+                         <option value="day">07</option>
+                         <option value="day">08</option>
+                         <option value="day">09</option>
+                         <option value="day">10</option>
+                    </select>
+                </td>
+           </tr>
+           <tr>
+                <th>성별</th>
+                <td>
+                    <input type="radio" name="gender" value="male"> 남자
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="gender" value="female"> 여자
+                </td>
+           </tr>
+           <tr>
+                <th>취미</th>
+                <td>
+                    <input type="checkbox" name="hobby" value="drive"> 드라이브
+                    <input type="checkbox" name="hobby" value="sport"> 스포츠
+                    <input type="checkbox" name="hobby" value="game"> 게임
+                    <input type="checkbox" name="hobby" value="fishing"> 낚시
+               </td>
+           </tr>
+           <tr>
+                <th>나이</th>
+                <td><input type="number" name="age" min="20" max="100" value="20"></td>
+           </tr>
+           <tr>
+                <th>보안등급</th>
+                <td><input type="range" name="grade" min="0" max="20" step="10"></td>
+           </tr>
+       </table>
+     </form>
+    </body>
+</html>

@@ -1,0 +1,56 @@
+<style>
+    a li{
+        float: left;
+        padding: 5px 20px;
+        background-color: yellowgreen;
+        font-weight: 600;
+        width: 120px;
+        text-align: center;
+    }
+    ul{
+        min-width: 900;
+        list-style-type: none;
+    }
+
+    a:link{
+        text-decoration: none;
+        color: white;
+    }
+    a li:hover{
+        background-color: orange;
+    }
+    a:visited{
+        color: white;
+        text-decoration: none;
+    }
+    div.bar{
+        background-color: yellowgreen;
+        height: 31px;
+    }
+</style>
+
+<div class="bar">
+    <ul>
+        <!-- target_parent 가 있어야만 아이프레임 밖으로 페이지 이동이 가능 -->
+        <a href="subPage01.html" target="_parent"><li>HTML</li></a>
+        <a href="subPage02.html" target="_parent"><li>CSS</li></a>
+        <a href="subPage03.html" target="_parent"><li>JAVA SCRIPT</li></a>
+        <a href="subPage04.html" target="_parent"><li>J-Query</li></a>
+        <a href="https://www.w3schools.com/bootstrap/bootstrap_ver.asp"><li>Bootstrap</li></a>
+    </ul>
+</div>
+<!-- <ul style="list-style-type: none;">
+<ul>
+    <li>List 1</li>
+    <li>List 2</li>
+    <li>List 3</li>
+    <li>List 4</li>
+    <li>List 5</li>
+</ul>
+<ol>
+    <li>List 1</li>
+    <li>List 2</li>
+    <li>List 3</li>
+    <li>List 4</li>
+    <li>List 5</li>
+</ol> -->

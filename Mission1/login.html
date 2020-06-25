@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>login</title>
+        <meta charset="UTF-8">
+        <title>regist</title>
+        <style>
+           table,th,td{
+               border: 1px solid black;
+               border-collapse: collapse;
+               padding: 10px 10px;
+           } 
+           th{
+               width: 50px;
+           }
+           input[type= "submit"]{
+               height: 70px;
+            }
+
+           td{
+               /* 태그 안의 요소들 정렬 지정(다 되는것은 아님) */
+               text-align: center;
+           }
+        </style>
+    </head>
+    <body>
+        <h1>로그인 페이지</h1>
+        <hr/>
+        <form action="" method="POST">
+        <table>
+            <tr>
+                <th>ID</th>
+                <td><input type="text" name="userID" placeholder="아이디를 입력 하세요"></td>
+                <td rowspan="2"><input type="submit" value="로그인"></td>
+            </tr>
+            <tr>
+                 <th>PW</th>
+                 <td><input type="text" name="password" placeholder="비밀번호를 입력 하세요"></td>
+             </tr>
+             <tr> 
+                 <td colspan="3"><input type="button" value="회원가입"> <input type="button" value="아이디/비번 찾기"> </td>
+             </tr>
+        </table>
+        </form> 
+
+    </body>
+</html>

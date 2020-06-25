@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Link</title>
+        <link rel="icon" href="./icon.png">
+        <style>
+            /* a 태그에는 4가지 상태가 있음. 클릭 전, 클릭 후, 마우스오버, 링크 실행 시 */
+            a:link{
+                color: red;
+                text-decoration: none;
+            }
+            /* 클릭 후 */
+            a:visited{
+                color: orange;
+                text-decoration: none;
+            }
+            /* 마우스 오버 시 */
+            a:hover{
+                color: blue;
+                text-decoration: underline;
+            }
+            a:active{
+                color: green;
+                text-decoration: underline;
+            }
+        </style>
+    </head>
+    <body>
+        <a href="http://www.naver.com/" target="_parent">Visit w3school</a>
+    </body>
+</html>

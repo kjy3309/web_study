@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <title>Position</title>
+        <meta charset="utf-8">
+        <link rel="icon" href="icon.png">
+        <style>
+            div{
+                width: 200px;
+                height: 200px;
+                text-align: center;
+            }
+
+            div.static{
+                /* 위치의 기준이 되는 속성 */
+                position: static;
+                border: 3px solid red;
+            }
+
+            div.relative{ /* static 을 기준으로 움직인다(가장 많이 쓰임). static 이 없다면 근처 relative 를 기준으로 움직인다. 만약 둘 다 없으면 body를 기준으로 움직임 */
+                position: relative;
+                border: 3px solid aqua;
+                top: 1000px;
+                left: 200px;
+            }
+
+            div.absolute{
+                /* 
+                부모를 기준으로 움직임 부모외에는 영향 받지 않음
+                레이어 팝업에 많이 쓰인다.
+                */
+                position: absolute;
+                width: 100px;
+                height: 100px;
+                border: 3px solid red;
+                top: 50%;
+                left: 50%;
+            }
+
+            div.fixed{
+                /* 화면 기준 지정된 자리에서 움직이지 않는다.
+                따라다니는 메뉴에 자주 사용된다. */
+                position: fixed;
+                width: 50px;
+                height: 100px;
+                border: 3px solid coral;
+                top: 10%;
+                right: 10%;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div class="static">POSITION:STATIC</div>
+
+        <div class="relative">
+            POSITION:RELATIVE
+            <div class="absolute">POSITION:ABSOLUTE</div>
+        </div>
+
+        <div class="fixed">POSITION:FIXED</div>
+    </body>
+</html>
