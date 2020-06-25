@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <style>
+
+        </style>
+    </head>
+    <body>
+        <p id='info'></p>
+        <button>창 열기</button>
+        <button>창 닫기</button>
+        <br>
+        부모 창에서 받아올 값 : <input type="text" id="fromParent">
+        부모 창으로 보낼 값 : <input type="text" id="toParent">
+        <input type="button" value="보내기" onclick="sendVal()">
+        
+    </body>
+    <script>
+        // postMessage 에서 온 데이터를 받는 이벤트를 추가해줘야 한다.
+        window.addEventListener('message',function(e){
+            document.getElementById('fromParent').value = e.data;
+        });
+
+
+        var btn= document.getElementsByTagName('button')
+        var parent;
+
+        btn[0].addEventListener('click',function(){
+            parent = window.open('11_parent.html');
+        });
+        btn[1].addEventListener('click',function(){
+            parent.close();
+        });
+        
+        function sendVal(){
+            var val = document.getElementById('toParent').value;
+            // 서버환경이 아니면 작동이 안된다.
+            // opener.document.getElementById('fromChild').value = val;
+            // postMessage 를 이용해서 부모창에 값 전달하기
+            opener.postMessage(val,"*");
+        }
+    </script>
+</html>

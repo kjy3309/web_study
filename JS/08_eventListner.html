@@ -1,0 +1,79 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <style>
+            div{
+                width: 250px;
+                height: 250px;
+                background-color: wheat;
+                text-align: center;
+                line-height: 200px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="eventzone"></div>
+        <button id="btn">click me</button>
+        <span id="msg">button status : normal</span> <!-- 텍스트의 영역을 잡아줄때 span 을 주로 사용 -->
+        <h4>mouse position : <span id="pos"></span></h4>
+    </body>
+    <script>
+
+        // 클릭한 위치 좌표를 표현하시오.
+        document.addEventListener('click',function(e){
+            document.getElementById('pos').innerHTML=" X: "+e.screenX+" Y: "+e.screenY;
+        });
+
+        // document.addEventListener('mousemove',function(e){
+        //     document.getElementById('pos').innerHTML=" X: "+e.screenX+" Y: "+e.screenY;
+        // });
+
+        var mousezone = document.getElementById("eventzone");
+        var btn = document.getElementById("btn");
+        var msg = document.getElementById("msg");
+
+        // mouseOver -> span 에 status : mouse over 라고 출력
+        btn.addEventListener('mouseover',function(){
+            msg.innerHTML="status : mouse over"
+        });
+        // mouseDown -> span 에 status : mouse down 라고 출력
+        btn.addEventListener('mousedown',function(){
+            msg.innerHTML="status : mouse down"
+        });
+        // mouseUp -> span 에 status : mouse up 라고 출력
+        btn.addEventListener('mouseup',function(){
+            msg.innerHTML="status : mouse up"
+        });
+
+        // click
+        mousezone.addEventListener('click',function(e){
+            // <div id eventzone 에 Click 이라는 문구 추가
+            // 배경색은 orange 로 변경
+            mousezone.innerHTML="click";
+            mousezone.style.backgroundColor="orange";
+        });
+        // dblclick
+        mousezone.addEventListener('dblclick',function(e){
+            // double click 이라는 문구 추가
+            // 배경색은 yellow green
+            mousezone.innerHTML="double click";
+            mousezone.style.backgroundColor="yellowgreen";
+        });
+        // mouseEnter
+        mousezone.addEventListener('mouseenter',function(e){
+            // mouse enter 문구, 배경색 : blue
+            mousezone.innerHTML="mouse enter";
+            mousezone.style.backgroundColor="blue";
+            mousezone.style.fontWeight=600;
+            mousezone.style.color="white";
+        });
+        // mouseOut
+        mousezone.addEventListener('mouseout',function(e){
+            // mouse out 문구, 배경색 : red
+            mousezone.innerHTML="mouse out";
+            mousezone.style.backgroundColor="red";
+            mousezone.style.fontWeight=600;
+        });
+    </script>
+</html>

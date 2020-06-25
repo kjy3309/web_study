@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>02 Query Selector</title>
+        <style>
+
+        </style>
+    </head>
+    <body>
+        <h2>H2 TAG</h2>
+        <h3>H3 TAG</h3>
+        <p>
+            쿼리 셀렉터는 css의 그것을 차용 한 것이다.
+        </p>
+        <p class="ex">
+            IE8 버전 이하는 사용할 수 없다.
+        </p>
+        <span id="sample"></span>
+        <a href="https://naver.com" target="blank">LINK</a>
+        <div>
+            <p>특정 요소의 자식 요소</p>
+        </div>
+        <button>BUTTON</button>
+        <button>BUTTON</button>
+        <button class="btn">BUTTON</button>
+        <button class="btn">BUTTON</button>
+        <button class="btn">BUTTON</button>
+    </body>
+    <script>
+        console.log(document.querySelector(".ex")); 
+        // id = sample
+        console.log(document.querySelector("#sample"));
+        // p tag
+        console.log(document.querySelector("p"));
+        // 쿼리 셀렉터는 1개의 요소만 가져올 수 있다. (단점)
+        // 다양한 방식으로 요소를 가져올 수 있다. (장점)
+        console.log(document.querySelector("div p"));
+        console.log(document.querySelector("a[target='blank']"));
+        // 복수개를 가져오기 위한 함수
+        console.log(document.querySelectorAll("button"));
+        console.log(document.querySelectorAll("button.btn"));
+    </script>
+</html>

@@ -1,0 +1,114 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>input</title>
+    </head>
+    <body>
+        <input type="button" value="click" onclick="alert('click!')">
+        <!-- 서버로 데이터를 전송할 때 사용-->
+        <input type="submit" value="전송" id="">
+        
+        <fieldset>
+            <legend>text & password</legend>
+            <!-- 
+                disabled : 비활성화
+                max_length : 입력 최대값
+                readonly : 읽기전용
+             -->
+            ID : <input type="text" name="userID" value="" disabled>
+            PW : <input type="password" name="userPW" value="" maxlength="8">
+        </fieldset>
+
+        <fieldset>
+            <legend>checkbox & radio</legend>
+            <!-- checkbox 는 복수개의 선택이 가능하다. -->
+            <input type="checkbox" name="vehicle1" value="Bike"> Bike
+            <input type="checkbox" name="vehicle2" value="Car"> Car
+            <input type="checkbox" name="vehicle3" value="Boat"> Boat
+            <br><!-- radio 는 한개 선택만 가능하다. -->
+            <input type="radio" name="gender" value="남자"> 남자
+            <input type="radio" name="gender" value="여자"> 여자
+        </fieldset>
+
+        <fieldset>
+            <legend>file</legend>
+            <form>
+            SELECT FILE : <input type="file" name="uploadFile">
+            <input type="submit" value="파일전송">
+            </form>
+        </fieldset>
+
+        <fieldset>
+            <legend>hidden & text</legend>
+            First Name : <input type="text" name="firstName" value="jung-yeol">
+            <br>
+            <!-- 서버에는 전송되지만 사용자에게 보여줄 필요가 없는 정보 -->
+            Last Name : <input type="hidden" name="lastName" value="kim">
+        </fieldset>
+
+        <fieldset>
+            <legend>select</legend>
+            <select name="car">
+                <option value="Volvo">Volvo</option>
+                <option value="Saab">Saab</option>
+                <option value="Fiat">Fiat</option>
+                <option value="audi" selected>audi</option> <!-- selected 는 기본 값으로 설정되도록 해 준다. -->
+            </select>
+        </fieldset>
+
+
+        <!-- HTML5 전용 : IE 11 이하에서는 제대로 작동되지 않을 수 있음 -->
+        <fieldset>
+            <legend>E-mail</legend>
+            <form>
+                <!-- @ 유무만 잡아준다. -->
+                Email = <input type="email" name="userEmail">
+                <input type="submit">
+                <p>주의 : IE 9 버전 또는 사파리에서 작동 안함</p>
+            </form>
+        </fieldset>
+
+        <fieldset>
+            <legend>NUMBER & RANGE</legend>
+            <form>
+            NUMBER(1~10) :
+            <input type="number" name="qty" min="1" max="10">
+            <input type="submit">
+            RANGE(1~10) :
+            <!-- 어떤 값이 선택되었는지는 javascript를 사용해야 한다. -->
+            <input type="range" name="point" min="1" max="10">
+            <input type="submit">
+            </form> 
+        </fieldset>
+
+        <fieldset>
+            <legend>COLOR</legend>
+            <input type="color" name="favorcolor">
+        </fieldset>
+
+        <fieldset>
+            <legend>date & month</legend>
+            DAY : <input type="date" name="day"/>
+            <br>
+            month :<input type="month" name="month">
+        </fieldset>
+
+        <fieldset>
+            <legend>date-local-time</legend>
+            <input type="datetime-local" name="daytime">
+        </fieldset>
+
+        <fieldset>
+            <legend>time & reset & url & week</legend>
+            <form>
+                TIME : <input type="time"><br>
+                URL : <input type="url"><br>
+                WEEK : <input type="week"><br>
+                <input type="submit">
+                <!-- reset 은 html5 전용이 아님 -->
+                <input type="reset" value="초기화">
+            </form>
+        </fieldset>
+
+    </body>
+</html>

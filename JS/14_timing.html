@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <style>
+
+        </style>
+    </head>
+    <body>
+        <button onclick="interval()">증가</button>
+        <button onclick="stop()">정지</button>
+        <button onclick="setTime()">3초 후 경고</button>
+        <h1 id='cnt'>0</h1>
+    </body>
+    <script>
+        var cnt = 0;
+        var btn = document.getElementsByTagName('button');
+        var inter;
+
+        function interval(){
+            // 특정 시간마다 반복해서 수행
+            // setInterval(실행 함수, 시간 간격)
+            inter = setInterval(function(){ // h1 cnt가 1초마다 1씩 증가하여 찍힘
+            btn[0].setAttribute('disabled','true') // 버튼 비활성화
+                document.getElementById('cnt').innerHTML=cnt++;
+            },1000)
+        }
+        function stop(){
+            clearInterval(inter);
+            btn[0].removeAttribute('disabled'); // 해당 속성을 지운다
+        }
+        function setTime(){
+            // setTimeOut(실행함수,시간)
+            // 대기시간이 지나면 실행함수를 호출한다.
+            setTimeout(function(){
+                alert('3초 지남');
+            },3000);
+
+        }
+    </script>
+</html>

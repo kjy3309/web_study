@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <style>
+            #count{
+                color:red;
+            }
+        </style>
+    </head>
+    <body>
+        <h1><span id='count'>10</span> 초 후 페이지가 이동됩니다.</h1>
+    </body>
+    <script>
+        var i = 10;
+        var cnt = document.getElementById('count');
+        
+        setInterval(function(){ // 10초 부터 감소되는 값
+            if(i>0){
+                i--;
+            }
+            cnt.innerHTML = i;
+        },1000);
+
+        setTimeout(function(){
+            alert('페이지가 이동됩니다.');
+            location.href='https:\\www.google.com';
+        },10000);
+    </script>
+</html>

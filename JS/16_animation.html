@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <style>
+            #obj{
+                width: 30px;
+                height: 30px;
+                background-color: tomato;
+                position: absolute;
+                top: 50px;
+                left: 0px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id='obj'></div>
+        <button onclick="stop()">STOP</button>
+    </body>
+    <script>
+        var obj = document.getElementById('obj');
+        var inter;
+
+        obj.style.left = 0;
+        var i = 0;
+        inter = setInterval(function(){
+            if(i < 500){
+                obj.style.left = i++;
+            }else{
+                stop(); // break..
+            }
+        }, 10);
+        
+        function stop(){
+            clearInterval(inter);
+        }
+
+    </script>
+</html>

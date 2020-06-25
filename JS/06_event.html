@@ -1,0 +1,79 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <style>
+            div{
+                width: 250px;
+                height: 250px;
+                background-color: yellowgreen;
+            }
+        </style>
+    </head>
+    <!-- onload : 문서를 다 읽으면 실행되는 이벤트 로딩속도 체크나 핸들링 시 사용 -->
+    <body onload="alert('loading 끝')">
+        <!-- onMouseOver : 마우스가 위로 올라갔을 때, onMouseOut : 마우스가 밖으로 나갔을 때-->
+        <div id="over" onmouseover="mouseEvt('over')" onmouseout="mouseEvt('out')"></div>
+        <br>
+        <h3>오늘의 날짜: <span id="demo"></span></h3>
+        <button onclick="getDay()">날짜 추출</button>
+        <br>
+        <!-- onkeydown : 키보드 키가 눌렸을 경우 -->
+        <input id="keyon" type="text" onkeydown="going()">
+        <input id="keyup" type="text" onkeyup="typing(this)">
+        <h4 id="typing"></h4>
+        <!-- onchange : 요소에 변경이 생길 경우 // 거의 select와 함께 쓰임. -->
+        <select id="mySelect" onchange="getElem(this)">
+            <option value="Audi">Audi</option>
+            <option value="BMW">BMW</option>
+            <option value="Mercedes">Mercedes</option>
+            <option value="Volvo">Volvo</option>
+        </select>
+        <br>
+        <input type="button" value="온클릭" onclick="getButton(this)">
+    </body>
+    <script>
+        // over 했을 때 div 에 MOUSE OVER 라는 문구가 생기도록, 그리고 배경색은 노랑색으로
+        // out 했을 때 div 에 MOUSE OUT 라는 문구가 생기도록, 그리고 배경색은 파랑색으로
+        var over = document.getElementById("over");
+        var demo = document.getElementById("demo");
+
+        function getButton(tag){
+            // 클릭하면 버튼이 text box 로 변하도록 
+            tag.type = "text";
+        }
+
+        function typing(tag){
+            // 키를 떼었을 때 typing에 입력된 값이 뜬다.
+            document.getElementById("typing").innerHTML=tag.value;
+        }
+
+        function going(){
+            // 키가 눌렸을 때 <h4 id="typing"></h4> 에 key Down 이라고 뜬다.
+            document.getElementById("typing").innerHTML="Key Down!";
+        }
+
+        function getDay(){
+            demo.innerHTML=Date();
+        }
+
+        function mouseEvt(evt){
+            if(evt == 'over'){
+                over.innerHTML="MOUSE OVER";
+                over.style.backgroundColor="yellow";
+            }
+            if(evt == 'out'){
+                over.innerHTML="MOUSE OUT";
+                over.style.backgroundColor="blue";
+            }
+        }
+
+        function getElem(elem){
+            // this 라는 매개 변수는 이벤트가 발생된 요소를 뜻한다.
+            // this 를 사용하면 이벤트가 일어난 요소를 가져오기 위해서 getElement... 를 사용하지 않아도 된다.
+            console.log();
+            console.log(elem);
+        }
+        
+    </script>
+</html>

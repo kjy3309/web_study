@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>01 요소 가져오기</title>
+        <style>
+            /* h1 가져오기*/
+            h1{
+
+            }
+            /* class가 head2인 태그 가져오기*/
+            .head2{
+
+            }
+            /* id가 head3 가져오기*/
+            #head3{
+
+            }
+        </style>
+    </head>
+    <body>
+        <h1>H1 TAG 1</h1>
+        <h1>H1 TAG 2</h1>
+        <h1>H1 TAG 3</h1>
+        <h1>H1 TAG 4</h1>
+        <h2 class="head2">H2 TAG 1</h2>
+        <h2 class="head2">H2 TAG 2</h2>
+        <h2>H2 TAG 3</h2>
+        <h2 id="head3">H2 TAG 4</h2>
+    </body>
+    <script>
+        // java script 영역
+        /* h1 가져오기 */
+        var tags = document.getElementsByTagName("h1");
+
+        /* class가 head2인 태그 가져오기 */
+        var classes = document.getElementsByClassName("head2");
+
+        /* id가 head3 가져오기 */
+        var ids = document.getElementById("head3");
+        
+
+        console.log(tags);
+        console.error(classes);
+        console.warn(ids);
+
+    </script>
+</html>

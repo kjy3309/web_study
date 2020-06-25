@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>부모창 제어</title>
+        <style>
+
+        </style>
+    </head>
+    <body>
+        <p id='info'></p>
+        <button>창 열기</button>
+        <button>창 닫기</button>
+        <br>
+        자식 창으로 보낼 값 : <input type="text" id="toChild">
+        <input type="button" value="보내기" onclick="sendVal()">
+        자식 창에서 받아올 값 : <input type="text" id="fromChild">
+    
+    </body>
+    <script>
+        var btn= document.getElementsByTagName('button')
+        var child;
+
+        btn[0].addEventListener('click',function(){
+            child = window.open('12_child.html','','width=415,height=400,left=200');
+        });
+        btn[1].addEventListener('click',function(){
+            child.close();
+        });
+
+        function sendVal(){
+            // 문서에서 input 태그를 가져와 값을 추출
+            var val = document.getElementById('toChild').value;
+            // 자식창의 문서 중에서 id가 fromparent 인 녀석의 value 속성에 넣는다.
+            // 같은 서버가 아닌 환경에서 아래 코드는 cross domain 에 걸릴 수 있다. 서버가 아닌 브라우저 환경에서는 데이터 통신을 막아놓음 보안 강화정책임.
+            // child.document.getElementById('fromParent').value = val;
+            // 그래서 서버환경이 아니거나 다른서버 환경이면 html5 의 함수를 사용한다.
+            child.postMessage(val,'*'); // * 허용할 도메인이 뭐야? 다 ㄱㄱ
+        }
+
+        window.addEventListener('message',function(e){
+            document.getElementById('fromChild').value = e.data;
+        });        
+    </script>
+</html>

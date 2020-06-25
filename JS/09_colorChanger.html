@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <style>
+
+        </style>
+    </head>
+    <body>
+       <h1 id="txt">글자 색상이 변경됩니다.</h1> 
+       <button id="btn">색상변경</button>
+    </body>
+    <script>
+        // 버튼을 누르면 Text의 색상이 변하고. 색상은 빨 주 노 초 파 남 보. 보라색까지 오면 빨간색으로 돌아와야 함.
+        // 1. button 태그를 가져온다.
+        // 2. 가져온 태그에 이벤트를 추가한다.(click)
+        // 3. 클릭할 때 마다....
+        // 4. h1 태그를 가져온다.
+        // 5. 가져온 태그의 스타일에 색상을 변경해 준다.
+        var colo = ["red","orange","yellow","green","blue","navy","violet","pink"];
+        var i = 0;
+
+        document.getElementById('btn').addEventListener("click",function(){
+            document.getElementById("txt").style.color = colo[i++];
+            if(i==colo.length){
+                i = 0;
+            }
+        });
+
+
+        
+
+
+    </script>
+</html>

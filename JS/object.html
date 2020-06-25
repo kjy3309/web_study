@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <style>
+
+        </style>
+    </head>
+    <body>
+        
+    </body>
+    <script>
+        /* Object 선언법
+        var obj = new Object();
+        var obj2 = {};
+        */
+
+        var car = {type:'Fiat',model:500,color:'white'}
+        console.log(car);
+        // type 만 출력
+        console.log(car.type);
+        // model 만 출력
+        console.log(car.model);
+
+        // type 의 값을 Benz 로 변경
+        car.type = "Benz";
+        console.log(car.type);
+        // model 의 값을 E-Class 로 변경
+        car["model"] = "E-Class";
+        console.log(car.model);
+
+        // car 에 price 라는 속성을 추가
+        car["price"] = 10;
+        console.log(car);
+
+        // function 넣어보기
+        car.start = function(){
+            console.log("시동을 겁니다.");
+        }
+
+        car.start();
+
+        console.log(car);
+    </script>
+</html>

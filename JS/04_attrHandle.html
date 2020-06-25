@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <style>
+
+        </style>
+    </head>
+    <body>
+       <p id="p1"></p> 
+       <img id="image" src="img01.jpg" alt="버섯">
+    </body>
+    <script>
+        // id 가 p1 인 태그를 가져오자.
+        var elem1;
+        elem1 = document.getElementById("p1");
+        // id 가 image 인 태그를 가져오자.
+        var elem2;
+        elem2 = document.getElementById("image");
+
+        // elem1 에 있는 p 태그에 문구를 넣자
+        elem1.innerHTML="<b>새로운</b> 텍스트 등장!!"
+        // 그리고 style 을 주자
+        elem1.style.backgroundColor="yellow";
+
+        // elem2 의 src 속성을 바꾼다.
+        elem2.src="img02.jpg"; // 이걸로 해보고 안되면 아래거
+        elem2.setAttribute("src","img02.jpg");
+
+        
+
+    </script>
+</html>
