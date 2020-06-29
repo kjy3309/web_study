@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #screen{
+            position: absolute;
+            width: 256px;
+            height: 256px;
+            top: 50px;
+            left: 0;
+            background: url(sprite.png) 0px 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="screen"></div>
+    <button onclick = 'start()'>start</button>
+    <button onclick="stop()">stop</button>
+</body>
+<script>
+    // sprite 이미지의 좌표 값
+    // -21, -297, -538, -790, -1066, -1310
+    var obj = document.getElementById('screen');
+    var ani = [-21,-297,-538,-790,-1066,-1310]
+    var animation;
+
+    function start() {
+        var i = 0;
+        var j = 0;
+        animation = setInterval(function(){
+            obj.style.background='url(sprite.png)'+ani[i]+"px 0";
+            obj.style.left = j+'px';
+            j+=20;
+            i++;
+            if(i == ani.length){
+                i=0;
+            }
+        }, 100);
+    }
+
+    function stop() {
+        clearInterval(animation);
+    }
+
+</script>
+</html>

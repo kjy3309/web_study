@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #screen{
+            position: absolute;
+            width: 256px;
+            height: 256px;
+            top: 50px;
+            left: 50px;
+            background: url('sprite.png') 0px 0;
+        }
+        #bg{
+            width: 600px;
+            height: 400px;
+            background: url(background.jpg) 0px 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="screen"></div>
+    <div id="bg"></div>
+    <button onclick="start()">start</button>
+    <button onclick="stop()">stop</button>
+</body>
+<script>
+    // sprite 이미지의 좌표 값
+    // -21, -297, -538, -790, -1066, -1310
+    var obj = document.getElementById('screen');
+    var bg = document.getElementById('bg');
+    var ani = [-21,-297,-538,-790,-1066,-1310]
+    var x = 0;
+    var animation;
+
+    function start() {
+        var i = 0;
+        animation = setInterval(function(){
+            obj.style.background='url(sprite.png)'+ani[i]+"px 0"; // ani 배열을 반복해줌
+            bg.style.background='url(background.jpg)'+x+"px 0"; // +, 싱글쿼터, 더블쿼터 사용 유의
+            i++; // i값 증가
+            x += 20 * -1; // background 좌표 이동.,, x += -20; 으로도 가능
+            if(i == ani.length){ // i값 증가되다 ani.length의 길이와 같아지면
+                i=0; // 값 초기화
+            }
+
+            if(x <= -1000){ // background의 최대 길이까지 가면 스톱
+                stop();
+            }
+
+        }, 100);
+    }
+
+    function stop() {
+        clearInterval(animation);
+    }
+
+</script>
+</html>
