@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01_start</title>
+    <script></script>
+    <style>
+        #box{
+            width: 300px;
+            height: 250px;
+            background-color: skyblue;
+            color: 
+        }
+        #ex2{
+            text-align: center;
+        }
+    </style>
+    <!-- 다른 자바스크립트 파일 불러오기 -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+</head>
+<body>
+    <div id=box>
+        ID: <input type="text"> <br>
+        PW: <input type="text"> <button>로그인</button>
+        <div id=ex2>  </div>
+        
+    </div>
+</body>
+<script>
+    $('input').on({
+        focus:function(){
+            $(this).css({'background-color':'lightgray'})
+        },
+        blur:function(){
+            $(this).css({'background-color':'white'})
+        }
+    })
+
+    $('div').hover(function(){
+        $('#ex2').html('로그인 해주세요');
+        },function(){
+        $('#ex2').html('');
+    });
+</script>
+</html>

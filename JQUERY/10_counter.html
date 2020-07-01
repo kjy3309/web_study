@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>counter</title>
+    <script></script>
+    <style>
+        div{
+            width: 160px;
+            height: 30px;
+            padding: 10px 0px 0px 10px;
+            border: 1px solid lightgray;
+            font-size: 13px;
+            margin-top: 5px;
+            cursor: pointer;
+        }
+
+        span{
+            color: orange;
+            font-weight: 600;
+            border: 1px solid lightgray;
+            padding: 3px 8px 4px 7px;
+            margin-left: 20px;
+        }
+    </style>
+    <!-- 다른 자바스크립트 파일 불러오기 -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+</head>
+<body>
+    <div class="cnt">
+        <div>
+            A 아이템 구매 수
+            <span class="cntA">0</span>
+        </div>
+        <div>
+            B 아이템 구매 수
+            <span class="cntB">0</span>
+        </div>
+        <div>
+            C 아이템 구매 수
+            <span class="cntC">0</span>
+        </div>
+    </div>
+</body>
+<script>
+    $(document).ready(function(){
+        console.log($('.cnt'));
+        
+        $('.cnt').click(function(){
+            $(this).html(a++);
+            $(this).html(b++);
+            $(this).html(c++);
+        });
+    });
+</script>
+</html>

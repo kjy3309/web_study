@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <title>08</title>
+    <style></style>
+</head>
+<body>
+    <button id="btn">버튼 생성</button>
+    <button id="evtDel">이벤트 삭제</button>
+</body>
+<script>
+    // $(selector).on('이벤트',실행 함수);
+    $('#btn').on('click',function(){
+        $('body').append('<button>click!</button>');
+    });
+
+    // on 으로 동록된 이벤트는 off로 제거가 가능하다
+    $('#evtDel').click(function(){
+        //$select.off 삭제이벤트
+        $('#btn').off('click');
+    });
+
+    // $(selector).이벤트(실행함수);
+</script>
+</html>

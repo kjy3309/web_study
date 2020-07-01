@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>09</title>
+    <script></script>
+    <style>
+        div {
+            margin: 5px;
+            width: 200px;
+            height: 200px;
+            float: left;
+            text-align: center;
+        }
+        #mousezone {
+            background-color: lightseagreen;
+        }
+        #overzone {
+            background-color: orange;
+        }
+    </style>
+    <!-- 다른 자바스크립트 파일 불러오기 -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+</head>
+<body>
+    <p>클릭하면 색상이 바뀌어요!!!!</p>
+    <p>클릭하면 색상이 바뀌어요!!!!</p>
+    <p>클릭하면 색상이 바뀌어요!!!!</p>
+    <p>클릭하면 색상이 바뀌어요!!!!</p>
+    <div id="mousezone">Mouse Zone</div>
+    <div id="overzone">H-over Zone</div>
+    ID : <input type="text"> <br>
+    PW : <input type="text">
+</body>
+<script>
+    $(document).ready(function(){
+        // 클릭한 p의 글자 색상 변경하기(red)
+        $('p').click(function(){
+            $(this).css({'color':'red'});
+        });
+
+        // mousezone 에 마우스가 들어가면 배경색이 빨강으로 변경(mouseenter)
+        // $('#mousezone').mouseenter(function(){
+        //     $(this).css({'background-color':'red'});
+        // });
+        // // mousezone 에 마우스가 나가면 배경색이 파랑으로 변경(mouseleave)
+        // $('#mousezone').mouseleave(function(){
+        //     $(this).css({'background-color':'blue'});
+        // });
+
+        $('#mousezone').on({
+            mouseenter:function(){
+                $(this).css({'background-color':'red'});
+            },
+            mouseleave:function(){
+                $(this).css({'background-color':'blue'});
+            },
+            mousedown:function(){
+                $(this).html('마우스 눌린 상태');
+                $(this).css({'background-color':'yellow'});
+            },
+            mouseup:function(){
+                $(this).html('마우스 뗀 상태');
+                $(this).css({'background-color':'lightseagreen'});
+            }
+        });
+        // input 커서 여부
+        $('input').on({ // 로그인 페이지 구현할 때 쓰임
+            focus:function(){
+                $(this).css({'background-color':'lightseagreen'})
+            },
+            blur:function(){
+                $(this).css({'background-color':'white'})
+            }
+        });
+
+        //hover = mouseenter + mouseout
+        $('#overzone').hover(function(){
+            $(this).css({'background-color':'red'});
+        },function(){
+            $(this).css({'background-color':'orange'});
+        });
+
+    })
+</script>
+</html>

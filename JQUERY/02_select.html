@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01_start</title>
+    <script></script>
+    <style></style>
+    <!-- 다른 자바스크립트 파일 불러오기 -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+</head>
+<body>
+    <h1>클래클래</h1>
+    <h1 class="cls">클래있다</h1>
+    <h2> 난없어 </h2>
+    <h2 class="cls">너무졸려</h2>
+
+    <p id="one">난아이디</p>
+    <p>hi</p>
+    <p>hi</p>
+
+    <div>List 1:</div>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>J-QUERY</li>
+    </ul>
+
+    <div>List 2:</div>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>J-QUERY</li>
+    </ul>
+
+    <a href="http://www.w3school.com">Site Link A</a><br>
+    <a href="http://www.w3school.com">Site Link B</a><br>
+    <a href="http://www.w3school.com" target="_blank">Site Link C</a>
+</body>
+<script>
+    // 문서가 준비 되면 function 내용을 실행하라.
+    $(document).ready(function(){
+
+    // id = 'one';
+    console.log(document.getElementById('one'));
+    console.log($('#one'));
+    // class = 'cls';
+    console.log(document.getElementsByClassName('cls'));
+    console.log($('.cls'));
+    // tag = 'p';
+    console.log(document.getElementsByTagName('p'));
+    console.log($('p'));
+
+    // p 태그에 이벤트 걸기
+    $('p').click(function(){
+        console.log($(this)); // 선택한 그 요소
+    });
+
+    console.log($("*"));
+
+    // h2 태그 중 클래스가 cls
+    console.log($("h2.cls"));
+
+    // p 태그 중 첫번째 요소
+    console.log($('p:first'));
+    
+    // 첫 ul 자식 중 첫번째 li
+    console.log($('ul li:first-child'));
+
+    // a 태그 중에서 href 속성이 있는 요소
+    console.log($('a[href]'))
+
+    console.log($('a[target="_blank"]'))
+    console.log($("a[target!='_blank']"))
+    });
+</script>
+</html>

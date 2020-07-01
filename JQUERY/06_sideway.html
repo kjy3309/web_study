@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <title>Document</title>
+    <style>
+        .siblings *{
+            display: block;
+            border: 2px solid gray;
+            padding: 5px;
+            margin: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="siblings">DIV(parent)
+        <p>ELEMENT 1</p>
+        <span>ELEMENT 2</span>
+        <h2>ELEMENT 3</h2>
+        <h3>ELEMENT 4</h3>
+        <h4>ELEMENT 5</h4>
+        <h5>ELEMENT 6</h5>
+        <h6>ELEMENT 7</h6>
+        <p>ELEMENT 8</p>
+    </div>
+</body>
+<script>
+    $(document).ready(function(){
+        // 지정된 요소를 제외한 나머지 형제 요소들
+        console.log($('h3').siblings());
+        console.log($('h3').next()); // 선택한 요소의 다음 요소 (밑으로)
+        console.log($('h3').prev()); // 선택한 요소의 이전 요소 (위로)
+
+        console.log($('h3').nextAll()); // 선택한 요소의 모든 다음 요소 (밑으로)
+        console.log($('h3').prevAll()); // 선택한 요소의 모든 이전 요소 (위로)
+
+        console.log($('h3').nextUntil("p")); // 양쪽의 선택한 요소들의 사이 (선택 요소는 제외)
+        console.log($('h3').prevUntil("p"));
+    })
+</script>
+</html>

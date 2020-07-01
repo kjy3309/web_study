@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style></style>
+</head>
+<body>
+    오브젝트 : employees <br>
+    firstName : <input type="text" id="fn"><br>
+    lastName : <input type="text" id="ln"><br>
+    <button id="add">list add</button>
+    <p id="result"></p>
+
+</body>
+<script>
+    document.getElementById('add').addEventListener('click',addVal);
+    var obj= {};
+    var arr= [];
+
+    function addVal() {
+        var person = {}; // 최소단위 부터 시작!
+
+        person.firstName = document.getElementById("fn").value;
+        person.lastName = document.getElementById('ln').value;
+        
+        arr.push(person);
+        obj.employees = arr;
+        console.log(obj);
+        // js obj 는 문자열로 찍히지 않아 바꿔주어야 한다.
+        var jsonText = JSON.stringify(obj);
+        document.getElementById('result').innerHTML=jsonText;
+    }    
+    
+    // {
+    //     "employees":[
+    //         {"firstName":"Jhone","lastName":"Doe"},
+    //         {"firstName":"Anna","lastName":"Smith"},
+    //         {"firstName":"Peter","lastName":"Jhones"}
+    //     ]
+    // }
+</script>
+</html>
