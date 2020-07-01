@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13_sample</title>
+    <script></script>
+    <style></style>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            // 뭔가를 입력해서 확인 admin 이면 구글로 이동
+            $('#goLink').click(function(){
+                var value = $('#userId').val();
+                if(value == "test"){
+                    $('a').attr('href','https://google.com');
+                }else if(value == 'gudi'){
+                    $('a').attr('href','http://www.gdu.co.kr/')
+                }
+                // url 변수를 미리 지정해놓고 조건문안에서 url 만 변경해주면 코드가 더욱 깔끔해진다. attr로 속성 변경은 마지막에..
+            });
+            
+        });
+    </script>
+    <!-- 다른 자바스크립트 파일 불러오기 -->
+    
+</head>
+<body>
+    ID : <input id="userId" type="text" value="">
+    <button id="goLink">확인</button>
+    <p>
+        <a href="#">링크 이동</a>
+    </p>
+</body>
+<script>
+
+</script>
+</html>

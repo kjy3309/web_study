@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <title>01_start</title>
+    <script>
+        $(document).ready(function(){
+            var size = $('#ex1').css('font-size');
+            var color = $('#ex1').css('color')
+            console.log(size);
+            console.log(color);
+            
+            $('#size').html(size);
+            $('#color').html(color);
+            
+            $('button').click(function(){
+                $('#ex2').css({'font-size':size,'color':color})
+            });
+        });
+    </script>
+    <style>
+        #ex1{
+            color: blue;
+            font-size: 32px;
+        }
+    </style>
+</head>
+<body>
+    <p id="ex1">스타일 적용</p>
+    <p id="ex2">스타일 미적용</p>
+    <div>
+        폰트 사이즈 : <span id="size"></span>
+        <br>
+        폰트 컬러 :  <span id="color"></span>
+        <br>
+        <button>css 적용</button>
+    </div>
+</body>
+</html>

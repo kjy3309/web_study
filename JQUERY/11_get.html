@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11_get</title>
+    <script></script>
+    <style></style>
+    <!-- 다른 자바스크립트 파일 불러오기 -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+</head>
+<body>
+    <input type="text" value="some text">
+    <p>문자가 쓰여진 <b>강조된</b> 영역</p>
+    <span id="txt"></span>
+    <span id="html"></span>
+    <fieldset>
+        <legend>숫자 입력</legend>
+        Range(0~100) : 
+        <input type="range" id="point" min="0" max="100" value="30" step="1">
+        <button id="inc">증가</button>
+        <button id="dec">감소</button>
+        당신이 선택한 값 : <span id="msg">30</span>
+    </fieldset>
+    <fieldset>
+        <legend>라디오 버튼</legend>
+        <div><input name="front" type="radio" value="html">HTML</div>
+        <div><input name="front" type="radio" value="CSS">CSS</div>
+        <div><input name="front" type="radio" value="JS">JS</div>
+        <span id="selected">선택값 없음</span>
+    </fieldset>
+</body>
+<script>
+    var attr = $('input[type="text"]').attr('type'); // type 속성 가져오기
+    var val = $('input[type="text"]').val();
+
+    console.log(attr);
+    console.log(val);
+    
+    console.log($('p').html());
+    console.log($('p').text()); // text() 는 html 태그를 가져오지 않는다.
+
+    $('#txt').text('<h1>HTML 과 TEXT 의 차이</h1>'); // text() 는 출력 시 html 태그를 문자열로 본다.
+    $('#html').html('<h1>HTML 과 TEXT 의 차이</h1>');
+
+    $('#inc').click(function(){
+        var n = $('#point').val();
+        n++;
+        $('#point').val(n);
+        $('#msg').html(n);
+    });
+
+    $('#dec').click(function(){
+        var m = $('#point').val();
+        m--;
+        $('#point').val(m);
+        $('#msg').html(m);
+    });
+    
+    // 마우스 다운 + 마우스 무브 이벤트 추가
+    $('#point').mousedown(function(){
+        $(this).on('mousemove',function(){
+            $('#msg').html($('#point').val()); 
+        });
+    });
+
+    // 마우스 업 + 마우스 무브 이벤트 제거
+    $('#point').mouseup(function(){
+        $(this).off('mousemove');
+    });
+
+    console.log($('input[type="radio"]'));
+    console.log($(':radio'));
+    // 셀렉터를 변수에 담을 수 있다.
+    var $radio = $(':radio');
+
+    $radio.click(function(){
+        var value = $(this).val();
+        $('#selected').html("당신이 선택한 값 : "+"<b>"+value+"</b>");
+    });
+
+
+</script>
+</html>

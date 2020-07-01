@@ -27,29 +27,31 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
 <body>
-    <div class="cnt">
         <div>
             A 아이템 구매 수
-            <span class="cntA">0</span>
+            <span class="cnt">0</span>
         </div>
         <div>
             B 아이템 구매 수
-            <span class="cntB">0</span>
+            <span class="cnt">0</span>
         </div>
         <div>
             C 아이템 구매 수
-            <span class="cntC">0</span>
+            <span class="cnt">0</span>
         </div>
-    </div>
 </body>
 <script>
     $(document).ready(function(){
-        console.log($('.cnt'));
+        var a = 0;
+        var b = 0;
         
-        $('.cnt').click(function(){
-            $(this).html(a++);
-            $(this).html(b++);
-            $(this).html(c++);
+        $('div').click(function(){
+            // cnt의 숫자를 가져오고
+            console.log($(this).children().html);
+
+            var num = parseInt($(this).children().html());
+            num++;
+            $(this).children().html(num);
         });
     });
 </script>
