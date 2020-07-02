@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <title>16_hideShow</title>
+    <script>
+        $(document).ready(function(){
+            // $('ul').hide(3000,'swing'); // 시간을 안쓰면 바로 사라짐
+
+            $('div').hover(function(){
+                $('ul.hide').show(1000);
+            },function(){
+                $('ul.hide').hide(1000);
+            });
+
+            $('#toggle').click(function(){
+                // duration callback
+                // on,off
+                $('.test').toggle(500,function(){
+                    var display = $('p').css('display')
+                    if(display == "none"){
+                        $('#toggle').html('ON');
+                    }else{$('#toggle').html('OFF');}
+                    alert('toggle 완료');
+                    
+                    // 만약 #toggle.html() 이 "on"이면 off.. off면 on
+
+                })
+            });
+        });
+    </script>
+    <style>
+        div{
+            background-color: green;
+            width: 100px;
+            padding: 10px 0px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div>menu 1</div>
+    <ul class="hide">
+        <li>LIST 01</li>
+        <li>LIST 02</li>
+        <li>LIST 03</li>
+        <li>LIST 04</li>
+        <li>LIST 05</li>
+    </ul>
+    <button id="toggle">OFF</button>
+    <ul class="test">
+        <p>LIST 01</p>
+        <p>LIST 02</p>
+        <p>LIST 03</p>
+        <p>LIST 04</p>
+        <p>LIST 05</p>
+    </ul>
+</body>
+</html>

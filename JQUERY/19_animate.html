@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <title>19_animate</title>
+    <script>
+        $(document).ready(function(){
+            $('#right').click(function(){
+                // $('#obj').animate({"left":"1000"},'slow','swing')
+                $('#obj').animate({'left':'+=500'},1000,'swing')
+            })
+
+            // left 버튼 클릭 시 500씩 왼쪽으로 이동
+            $('#left').click(function(){
+                $('#obj').animate({'left':'-=500'},'slow')
+            })
+
+            $('#stop').click(function(){
+                $('#obj').stop();
+            })
+
+            $('#special').click(function(){
+                $('#obj').animate({"left":"+=500","width":"-=50", "height":"-=50", "opacity":"-=0.5"}
+                ,"slow","linear",function(){
+                alert("애니메이션 끝");
+                })
+            })
+            
+            $("#step").click(function(){
+            //가속도는 기본이 linear
+                $("#obj").animate({"left":"+=500"},"slow")
+                .animate({"top":"+=500"},"slow")
+                .animate({"left":"-=500"},"slow")
+                .animate({"top":"-=500"},"slow");
+    });
+        });
+    </script>
+    <style>
+        #obj{
+            position: absolute;
+            background-color: cornflowerblue;
+            width: 90px;
+            height: 90px;
+            left: 5px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button id="left">◀</button>
+    <button id="right">▶</button>
+    <button id="stop">■</button>
+    <button id="special">★</button>
+    <button id="step">step</button>
+    <div id="obj"></div>
+</body>
+</html>

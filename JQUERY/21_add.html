@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <title>01_start</title>
+    <script>
+        $(document).ready(function(){
+            var i = 1;
+            $("#appnd").click(function(){
+                i++;
+                //append : 선택된 대상의 자식요소 가장 뒤로 들어간다.
+                $("ol").append("<li>List Item "+i+"</li>");
+            });
+
+            $('#ppnd').click(function(){
+                i++;
+                $('ol').prepend("<li>List Item "+i+"</li>")
+            })
+
+            $("#aft").click(function(){
+            i++;
+            //after : 선택된 대상 바로 뒤에 붙는다.
+            $("ol").after("<li>List Item "+i+"</li>");
+            });
+            
+            $("#bef").click(function(){
+            i++;
+            //after : 선택된 대상 바로 앞에 붙는다.
+            $("ol").before("<li>List Item "+i+"</li>");
+            });
+        });
+    </script>
+    <style></style>
+</head>
+<body>
+    <ol>
+        <li>List Item 1</li>
+    </ol>
+    <button id="appnd">Append</button>
+    <button id="ppnd">Preppend</button>
+    <button id="aft">After</button>
+    <button id="bef">Before</button>
+
+    
+</body>
+</html>

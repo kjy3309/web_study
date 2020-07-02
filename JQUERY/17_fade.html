@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <title>17_fade</title>
+    <script>
+        $(document).ready(function(){
+            $('#viz').click(function(){
+                // show() 는 크기를 조정하면서 투명도를 조절
+                // fadeIn() 은 요소를 만들고 투명도를 조절
+                $('div').fadeIn(3000);
+            })
+
+            $('#inviz').click(function(){
+                $('div').fadeOut('slow');
+            })
+
+            $('#toggle').click(function(){
+                $('div').fadeToggle(1000,function(){                    
+                    var value = $('div').css('display')
+                    if(value == 'none'){
+                        $('#toggle').html('ON');
+                    }else{$('#toggle').html('OFF');}
+                })
+            })
+
+            $('img').hover(function(){
+                // speed opacity
+                $(this).fadeTo('slow',0.2);
+            },function(){
+                $(this).fadeTo('slow',1)
+            })
+        });
+    </script>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: yellowgreen;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <button id="viz">fade in</button>
+    <button id="inviz">fade out</button>
+    <button id="toggle">ON</button>
+    <div></div>
+    <br>
+    <img src="img01.jpg" width="100px">
+</body>
+</html>
